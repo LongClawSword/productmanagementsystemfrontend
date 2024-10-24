@@ -1,6 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import Home from './pages/index';
+import Home from './pages/index.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
