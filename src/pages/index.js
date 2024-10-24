@@ -14,7 +14,7 @@ const Home = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/products'); // Ensure this URL matches your backend
+      const response = await axios.get('https://productmanagementsystembackend.onrender.com/api/products'); // Ensure this URL matches your backend
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -23,7 +23,7 @@ const Home = () => {
 
   const addProduct = async () => {
     try {
-      await axios.post('http://localhost:5001/api/products', newProduct); // Ensure this URL matches your backend
+      await axios.post('https://productmanagementsystembackend.onrender.com/api/products', newProduct); // Ensure this URL matches your backend
       setNewProduct({ name: '', description: '', price: '', quantity: '' }); // Reset form
       fetchProducts(); // Refresh product list
     } catch (error) {
@@ -33,7 +33,7 @@ const Home = () => {
 
   const deleteProduct = async (id) => {
     try {
-      await axios.delete(`http://localhost:5001/api/products/${id}`); // Ensure this URL matches your backend
+      await axios.delete(`https://productmanagementsystembackend.onrender.com/api/products/${id}`); // Ensure this URL matches your backend
       fetchProducts(); // Refresh product list
     } catch (error) {
       console.error('Error deleting product:', error);
@@ -48,7 +48,7 @@ const Home = () => {
 
   const updateProduct = async () => {
     try {
-      await axios.put(`http://localhost:5001/api/products/${editingProduct.id}`, newProduct); // Ensure this URL matches your backend
+      await axios.put(`https://productmanagementsystembackend.onrender.com/api/products/${editingProduct.id}`, newProduct); // Ensure this URL matches your backend
       setEditingProduct(null); // Clear editing state
       setNewProduct({ name: '', description: '', price: '', quantity: '' }); // Reset form
       fetchProducts(); // Refresh product list
